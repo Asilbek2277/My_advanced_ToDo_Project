@@ -20,7 +20,9 @@ from mainAPP.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', Task.as_view(), name='home'),
+    path('tasks/', Task.as_view(), name='home'),
     path('<int:pk>/delete/', delete_task, name='delete_task'),
     path('<int:pk>/edit/', Tahrirlash, name='edit'),
+    path('', LoginView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
 ]
